@@ -1,0 +1,115 @@
+<div class="home">
+
+  <nz-carousel nzAutoPlay>
+    <div nz-carousel-content *ngFor="let index of array">
+      <img class="d-block w-100" src="assets/images/blog_{{index}}.jpg" alt="Third slide">
+    </div>
+  </nz-carousel>
+
+</div>
+
+
+<div class="team">
+  <div class="team_background parallax-window" data-parallax="scroll" data-image-src="assets/images/team_background.jpg"
+    data-speed="0.8"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="section_title_container text-center">
+          <h2 class="section_title">Top cours recommandés</h2>
+          <div class="section_subtitle">
+            <p></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row team_row">
+
+      <div *ngFor="let top of topCours" class="col-lg-3 col-md-6 team_col">
+        <div class="team_item">
+          <div class="team_image"><img src="{{top.path}}" alt=""></div>
+          <div class="team_body">
+            <div class="team_title"><a>{{top.name}}</a></div>            
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+<div class="features">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="section_title_container text-center">
+          <h2 class="section_title">Catégories</h2>
+          <div class="section_subtitle">
+            <b>Analyse numérique</b><br/>
+            <b>Big Data</b><br/>
+            <b>Data analysis</b><br/>
+            <b>E-learning</b><br/>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="section_title_container text-center">
+          <h2 class="section_title">Langues</h2>
+          <div class="section_subtitle">
+            <b>Francais</b><br/>
+            <b>Anglais</b><br/>
+            <b>Spain</b><br/>
+            <b>Chinois</b><br/>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</div>
+
+<!-- Popular Courses -->
+
+<div class="courses">
+  <div class="section_background parallax-window" data-parallax="scroll"
+    data-image-src="assets/images/courses_background.jpg" data-speed="0.8"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="section_title_container text-center">
+          <h2 class="section_title">Liste des cours</h2> 
+        </div>
+      </div>
+    </div>
+    <div class="row courses_row">
+
+      <!-- Course -->
+      <div class="col-lg-3 course_col" *ngFor="let top of topCours">
+        <div class="course">
+          <div class="course_image"><img src="{{top.path}}" alt=""></div>
+          <div class="course_body">
+            <h3 class="course_title"><a>{{top.name}}</a></h3>
+            <div class="course_teacher">Mr. John Taylor</div>
+            <div class="course_text">
+              <p>Lorem ipsum dolor sit amet, consectetur adipi elitsed do eiusmod tempor</p>
+            </div>
+          </div> 
+        </div>
+      </div>
+ 
+
+       
+
+    </div>
+    <div class="row">
+      <div class="col">
+        <div class="courses_button trans_200"><a>Toutes les cours</a></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
