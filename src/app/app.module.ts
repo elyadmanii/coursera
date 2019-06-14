@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {ReactiveFormsModule} from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/layouts/header/header.component';
@@ -15,6 +16,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { registerLocaleData } from '@angular/common';
 import fr from '@angular/common/locales/fr';
+import { SearchContenuComponent } from './components/search/search-contenu/search-contenu.component';
+import { SearchUserComponent } from './components/search/search-user/search-user.component';
+import { SearchItemComponent } from './components/search/search-item/search-item.component';
+import { GestionCoursComponent } from './components/gestion-cours/gestion-cours.component';
 
 registerLocaleData(fr);
 
@@ -26,7 +31,11 @@ registerLocaleData(fr);
     IndexComponent,
     LoginComponent,
     RegisterComponent,
-    CoursesComponent
+    CoursesComponent,
+    SearchContenuComponent,
+    SearchUserComponent,
+    SearchItemComponent,
+    GestionCoursComponent
   ],
   imports: [
     BrowserModule,
@@ -34,6 +43,7 @@ registerLocaleData(fr);
     NgZorroAntdModule,
     FormsModule,
     HttpClientModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule
   ],
   providers: [{ provide: NZ_I18N, useValue: fr_FR }],

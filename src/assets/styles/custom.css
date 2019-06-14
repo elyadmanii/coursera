@@ -7,3 +7,20 @@
 .search_input{
   border: 2px solid #dddddd;  
 }
+
+.m-tb-110{
+  margin-top: 110px;
+  margin-bottom: 110px;
+}
+
+.zone-search{
+  margin-top: -200px;
+}
+.btn-search{
+  margin: 10px!important;
+}
+.group-btn-search{
+  border: 1px solid red;
+  background-color: aliceblue!important;
+}
+

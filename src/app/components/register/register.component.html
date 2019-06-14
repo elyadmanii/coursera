@@ -1,3 +1,83 @@
-<p>
-  register works!
-</p>
+<div class="row m-tb-110">
+  <div class="col-md-3"></div>
+  <div class="col-md-6">
+
+    <h2>Inscription</h2>
+
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+
+
+      <div class="form-group">
+        <label for="type">type d'utilisateur</label>
+
+        <nz-select style="width: 100%" formControlName="type" (ngModelChange)="update_form()"  [nzSize]="size">
+          <nz-option *ngFor="let user of type_users" [ngClass]="{ 'is-invalid': submitted && f.type.errors }"
+            [nzLabel]="user.label" [nzValue]="user"></nz-option>
+        </nz-select>
+
+        <div *ngIf="submitted && f.type.errors" class="invalid-feedback">
+          <div *ngIf="f.type.errors.required">type requis</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="user">id user</label>
+        <input type="text" formControlName="user" class="form-control"
+          [ngClass]="{ 'is-invalid': submitted && f.user.errors }" />
+        <div *ngIf="submitted && f.user.errors" class="invalid-feedback">
+          <div *ngIf="f.user.errors.required">id user requis</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Mot de passe</label>
+        <input type="password" formControlName="password" class="form-control"
+          [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+          <div *ngIf="f.password.errors.required">Mot de passe requis</div>
+        </div>
+      </div>
+
+
+      <div *ngIf="eleve" class="form-group">
+        <label for="cour">Les cours souhaité</label>
+
+        <nz-select [nzMaxTagPlaceholder]="tagPlaceHolder" style="width: 100%" nzMode="multiple"
+          nzPlaceHolder="Please select" formControlName="cour" [nzSize]="size">
+          <nz-option *ngFor="let c of cours" [nzLabel]="c.label" [nzValue]="c"></nz-option>
+        </nz-select>
+
+        <div *ngIf="submitted && f.cour.errors" class="invalid-feedback">
+          <div *ngIf="f.cour.errors.required">cours requis</div>
+        </div>
+      </div>
+
+      <div *ngIf="eleve" class="form-group">
+        <label for="date">Date</label>
+
+        <nz-range-picker style="width: 100%" formControlName="date" [nzSize]="size"></nz-range-picker>
+
+        <div *ngIf="submitted && f.date.errors" class="invalid-feedback">
+          <div *ngIf="f.date.errors.required">date requis</div>
+        </div>
+      </div>
+
+      <div *ngIf="eleve" class="form-group">
+        <label for="langue">Langue</label>
+
+        <nz-select style="width: 100%" formControlName="langue" [nzSize]="size">
+          <nz-option *ngFor="let l of langues" [ngClass]="{ 'is-invalid': submitted && f.langue.errors }"
+            [nzLabel]="l.label" [nzValue]="l"></nz-option>
+        </nz-select>
+
+        <div *ngIf="submitted && f.langue.errors" class="invalid-feeFdback">
+          <div *ngIf="f.langue.errors.required">langue requis</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <button class="btn btn-primary">Enregistrer</button>
+      </div>
+    </form>
+  </div>
+</div>

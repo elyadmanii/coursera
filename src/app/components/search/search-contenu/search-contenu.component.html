@@ -1,0 +1,48 @@
+<div class="row m-tb-110">
+  <div class="col-md-12">
+    <h2>Recherche par contenu</h2>
+  </div>
+  <div class="col-md-12">
+
+    <form class="form-inline" [formGroup]="validateForm" (ngSubmit)="submitForm()">
+      <div class="form-group mb-2">
+        <label for="staticEmail2" class="sr-only">ID Cours</label>
+        <input type="text" readonly class="form-control-plaintext" id="staticEmail2" value="ID Cours">
+      </div>
+      <div class="form-group mx-sm-3 mb-2">
+        <label for="inputPassword2" class="sr-only">ID Cours</label>
+        <input type="text"
+          [ngClass]="{ 'is-invalid': validateForm.get('value')?.dirty && validateForm.get('value')?.errors }"
+          formControlName="value" class="form-control" id="inputPassword2" placeholder="ID Cours">
+        <label class="text-danger" *ngIf="validateForm.get('value')?.dirty && validateForm.get('value')?.errors">
+          ID Cours requis
+        </label>
+      </div>
+      <button type="submit" class="btn btn-primary mb-2" [disabled]="!validateForm.valid">Valider</button>
+    </form>
+
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col-md-12">
+      <h4>Les similarités de ce cours</h4>
+    <nz-table #basicTable [nzData]="listOfData">
+      <thead>
+        <tr>
+          <th>Cours</th> 
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of basicTable.data">
+          <td>{{ data.name }}</td> 
+          <td> 
+            <a>Détail</a>
+          </td>
+        </tr>
+      </tbody>
+    </nz-table>
+  </div>
+</div>
