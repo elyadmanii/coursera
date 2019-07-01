@@ -20,6 +20,7 @@ import { SearchContenuComponent } from './components/search/search-contenu/searc
 import { SearchUserComponent } from './components/search/search-user/search-user.component';
 import { SearchItemComponent } from './components/search/search-item/search-item.component';
 import { GestionCoursComponent } from './components/gestion-cours/gestion-cours.component';
+import { BackendService } from './backend.service';
 
 registerLocaleData(fr);
 
@@ -46,7 +47,7 @@ registerLocaleData(fr);
     ReactiveFormsModule,
     BrowserAnimationsModule
   ],
-  providers: [{ provide: NZ_I18N, useValue: fr_FR }],
+  providers: [{ provide: NZ_I18N, useValue: fr_FR },BackendService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
